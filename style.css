@@ -898,7 +898,7 @@ body.dark-mode .project-card {
     box-shadow: 0 10px 20px var(--accent-glow);
 }
 
-/* Skills Section */
+/* Skills Section  */
 .skills-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
