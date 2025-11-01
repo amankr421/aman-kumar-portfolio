@@ -36,7 +36,7 @@ For major changes, please open an issue first to discuss what you’d like to mo
 ## 🧑‍💻 Author
 **Aman Kumar**  
 🎓 MCA Student | 💻 Full Stack Developer  
-[GitHub](https://github.com/amankr421) • [LinkedIn](https://linkedin.com/in/amankr421)
+[GitHub](https://github.com/amankr421) • [LinkedIn](https://www.linkedin.com/in/aman-kumar-216bbb255/)
 
 ---
 
