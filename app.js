@@ -47,7 +47,7 @@ document.getElementById('downloadResume').addEventListener('click', function(e) 
         // Hide toast after 3 seconds
         setTimeout(() => {
             toast.classList.remove('show');
-            toast.textContent = 'Message sent successfully!'; // Reset message
+            toast.textContent = 'Message sent successfully!';
         }, 3000);
     }, 500);
 });
@@ -129,9 +129,9 @@ document.querySelectorAll('.fade-in, .slide-left, .slide-right').forEach(el => {
     observer.observe(el);
 });
 
-// FIXED: EmailJS Contact Form Functionality
+//  EmailJS Contact Form Functionality
 document.addEventListener('DOMContentLoaded', function() {
-    // Initialize EmailJS
+    
     emailjs.init("LLA1N4LKleD6kwkhw");
     
     const contactForm = document.getElementById('contactForm');
@@ -157,13 +157,13 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     if (contactForm) {
-        // FIX: Use a more reliable way to prevent form submission
+    
         contactForm.addEventListener('submit', function(e) {
-            // Double prevention
+           
             e.preventDefault();
             e.stopPropagation();
             
-            // Get form values
+            
             const name = document.getElementById('name').value;
             const email = document.getElementById('email').value;
             const subject = document.getElementById('subject').value;
