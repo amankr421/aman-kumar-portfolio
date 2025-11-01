@@ -5,6 +5,17 @@ window.addEventListener('load', () => {
     }, 1500);
 });
 
+// Typewriter effect reset for mobile
+function resetTypewriter() {
+    const typewriter = document.querySelector('.typewriter');
+    if (typewriter && window.innerWidth < 768) {
+        typewriter.style.animation = 'none';
+        setTimeout(() => {
+            typewriter.style.animation = '';
+        }, 10);
+    }
+}
+
 // Navbar Scroll Effect
 const navbar = document.querySelector('.navbar');
 window.addEventListener('scroll', () => {
@@ -15,12 +26,12 @@ window.addEventListener('scroll', () => {
     }
 });
 
-
 // Resume Download Handler
 document.getElementById('downloadResume').addEventListener('click', function(e) {
     e.preventDefault();
     
     // Show loading toast
+    const toast = document.getElementById('toast');
     toast.textContent = 'Preparing your download...';
     toast.classList.add('show');
     
@@ -118,46 +129,84 @@ document.querySelectorAll('.fade-in, .slide-left, .slide-right').forEach(el => {
     observer.observe(el);
 });
 
-// Contact Form Submission
-const contactForm = document.getElementById('contactForm');
-const toast = document.getElementById('toast');
-
-contactForm.addEventListener('submit', (e) => {
-    e.preventDefault();
+// FIXED: EmailJS Contact Form Functionality
+document.addEventListener('DOMContentLoaded', function() {
+    // Initialize EmailJS
+    emailjs.init("LLA1N4LKleD6kwkhw");
     
-    // Show toast
-    toast.classList.add('show');
+    const contactForm = document.getElementById('contactForm');
+    const submitBtn = document.getElementById('submitBtn');
+    const messageContainer = document.getElementById('messageContainer');
+    const toast = document.getElementById('toast');
     
-    // Reset form
-    contactForm.reset();
-    
-    // Hide toast after 3 seconds
-    setTimeout(() => {
-        toast.classList.remove('show');
-    }, 3000);
-});
-
-// Download Resume
-document.getElementById('downloadResume').addEventListener('click', (e) => {
-    e.preventDefault();
-    toast.textContent = 'Resume download started!';
-    toast.classList.add('show');
-    setTimeout(() => {
-        toast.classList.remove('show');
-        toast.textContent = 'Message sent successfully!'; // Reset original message
-    }, 3000);
-});
-
-
-// Typewriter effect reset for mobile
-function resetTypewriter() {
-    const typewriter = document.querySelector('.typewriter');
-    if (window.innerWidth < 768) {
-        typewriter.style.animation = 'none';
+    function showMessage(message, type) {
+        messageContainer.innerHTML = `<div class="message ${type}">${message}</div>`;
+        messageContainer.style.display = 'block';
+        
         setTimeout(() => {
-            typewriter.style.animation = '';
-        }, 10);
+            messageContainer.style.display = 'none';
+        }, 5000);
     }
-}
+    
+    function showToast(message) {
+        toast.textContent = message;
+        toast.classList.add('show');
+        setTimeout(() => {
+            toast.classList.remove('show');
+        }, 3000);
+    }
+    
+    if (contactForm) {
+        // FIX: Use a more reliable way to prevent form submission
+        contactForm.addEventListener('submit', function(e) {
+            // Double prevention
+            e.preventDefault();
+            e.stopPropagation();
+            
+            // Get form values
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const subject = document.getElementById('subject').value;
+            const message = document.getElementById('message').value;
+            
+            // Basic validation
+            if (!name || !email || !subject || !message) {
+                showMessage('Please fill in all fields.', 'error');
+                return false;
+            }
+            
+            // Show loading state
+            const originalText = submitBtn.innerHTML;
+            submitBtn.innerHTML = '<div class="loading"></div> Sending...';
+            submitBtn.disabled = true;
+            
+            // Send email using EmailJS
+            emailjs.send("service_oxvt4pr", "template_sucy6rr", {
+                from_name: name,
+                from_email: email,
+                subject: subject,
+                message: message,
+                reply_to: email
+            })
+            .then(function(response) {
+                console.log('SUCCESS!', response.status, response.text);
+                showMessage('Your message has been sent successfully! I will get back to you soon.', 'success');
+                showToast('Message sent successfully!');
+                contactForm.reset();
+            }, function(error) {
+                console.log('FAILED...', error);
+                showMessage('Sorry, there was an error sending your message. Please try again later.', 'error');
+                showToast('Failed to send message. Please try again.');
+            })
+            .finally(function() {
+                // Reset button state
+                submitBtn.innerHTML = originalText;
+                submitBtn.disabled = false;
+            });
+            
+            return false; // Additional prevention
+        });
+    }
+});
 
 window.addEventListener('resize', resetTypewriter);
