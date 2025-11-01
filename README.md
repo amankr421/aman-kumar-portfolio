@@ -1,43 +1,48 @@
-# 🧠 QuizTantra
+# 🌐 Aman Kumar — Personal Portfolio Website
 
-**QuizTantra** is a modern, interactive, and AI-powered **Quiz Web App** that lets users test their knowledge across multiple categories — featuring sleek design, real-time scoring, leaderboard tracking, and light/dark themes.
+Welcome to my **personal portfolio website**, showcasing my work, skills, education, and projects as a **Full Stack Web Developer** and **Data Analyst Enthusiast**.  
+This website serves as my digital resume — built with modern, responsive design and smooth animations.
 
 ---
 
 ## 🚀 Features
-- 🎯 Play quizzes by category  
-- 🤖 AI-based smart quiz section  
-- 🏆 Real-time leaderboard  
-- 🌗 Light & Dark mode support  
-- 📱 Fully responsive glassmorphic UI  
-- 💬 Contact section for feedback  
+
+- 🏠 **Home Section:** Intro with name, emoji greetings, and download resume button  
+- 👨‍💻 **About Section:** My journey, interests, and professional summary  
+- 🎓 **Education Section:** Academic qualifications with timelines  
+- 🧠 **Skills Section:** Technical and soft skills with visual indicators  
+- 🧾 **Certifications Section:** Display of professional certifications  
+- 💼 **Projects Section:** Interactive cards with images and links to my live projects  
+- 📞 **Contact Section:** Form and social media links for communication  
+- 🌗 **Light / Dark Mode:** Toggle theme switcher  
+- 📱 **Responsive Design:** Fully optimized for all screen sizes
 
 ---
 
-## 🛠️ Tech Stack
-**Frontend:** HTML, CSS, JavaScript  
-**Backend:** Python (Flask)  
-**Database:** MySQL  
-**Hosting:** Vercel  
+## 🛠️ Technologies Used
+
+- **HTML5**
+- **CSS3**
+- **JavaScript (ES6)**
+- **Font Awesome Icons**
+- **Google Fonts**
+- **Vercel (Hosting)**
 
 ---
 
-## 🌐 Live Demo
-👉 [https://quiz-tantra.vercel.app](https://quiz-tantra.vercel.app)
+## 🔗 Live Demo
+
+🌍 **Live Website:** [https://aman-kumar-portfolio.vercel.app](https://aman-kumar-portfolio.vercel.app)  
+💻 **GitHub Repository:** [https://github.com/amankr421/aman-kumar-portfolio](https://github.com/amankr421/aman-kumar-portfolio)
 
 ---
 
-## 🤝 Contributing
-Pull requests are welcome!  
-For major changes, please open an issue first to discuss what you’d like to modify.
+## 📬 Contact Me
+
+- 📧 **Email:** your-email@example.com  
+- 💼 **LinkedIn:** [Aman Kumar](https://linkedin.com/in/amankr421)  
+- 🐙 **GitHub:** [amankr421](https://github.com/amankr421)
 
 ---
 
-## 🧑‍💻 Author
-**Aman Kumar**  
-🎓 MCA Student | 💻 Full Stack Developer  
-[GitHub](https://github.com/amankr421) • [LinkedIn](https://www.linkedin.com/in/aman-kumar-216bbb255/)
-
----
-
-⭐ **If you like this project, don't forget to give it a star!**
+⭐ If you like my portfolio, don’t forget to **star** this repo and connect with me!
