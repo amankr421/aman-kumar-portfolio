@@ -37,7 +37,7 @@ document.getElementById('downloadResume').addEventListener('click', function(e) 
     
     // Open download link in new tab
     setTimeout(() => {
-        window.open('https://drive.google.com/uc?export=download&id=13ZI_tyNipHwAKRkxHvYgwmilwD3ucNJN', '_blank');
+        window.open('https://drive.google.com/file/d/1zM7eifN1Pq1SICg6C7noZVk9QyIN1Rxi/view?usp=sharing', '_blank');
         
         // Success message
         setTimeout(() => {
