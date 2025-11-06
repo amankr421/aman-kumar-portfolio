@@ -204,7 +204,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 submitBtn.disabled = false;
             });
             
-            return false; // Additional prevention
+            return false;
         });
     }
 });
