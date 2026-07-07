@@ -39,7 +39,7 @@ This website serves as my digital resume — built with modern, responsive desig
 
 ## 📬 Contact Me
 
-- 📧 **Email:** your-email@example.com  
+- 📧 **Email:** aman06052004@gmail.com  
 - 💼 **LinkedIn:** [Aman Kumar](https://linkedin.com/in/amankr421)  
 - 🐙 **GitHub:** [amankr421](https://github.com/amankr421)
 
